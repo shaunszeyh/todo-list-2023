@@ -1,0 +1,336 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+  background: #777777;
+  color: #eeeeee;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  background-color: #dddddd;
+}
+
+.sidebar,
+.projects {
+  display: flex;
+  flex-direction: column;
+  background-color: #bbbbbb;
+}
+
+.sidebar {
+  height: 100vh;
+  padding: 20px 20px;
+  align-items: flex-start;
+  width: 150px;
+  text-align: center;
+}
+
+.to-highlight {
+  font-size: 18px;
+  border-style: none;
+  background-color: #bbbbbb;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  width: 150px;
+  text-align: left;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.to-highlight:hover {
+  background-color: #aaaaaa !important;
+}
+
+.projectInput {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.projectInput [type="input"] {
+  font-size: 18px;
+  border-style: none;
+  background-color: white;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  width: 150px;
+  padding: 5px;
+}
+
+.projectInput [type="button"] {
+  font-size: 18px;
+  text-align: center;
+  border-style: none;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  width: 150px;
+  padding: 5px 0;
+}
+
+.projectInput :nth-child(2) {
+  background-color: rgb(26, 219, 26);
+}
+
+.projectInput :nth-child(3) {
+  background-color: red;
+}
+
+.projectInput :nth-child(2):hover {
+  transform: scale(1.05);
+  background-color: rgb(26, 219, 26);
+}
+
+.projectInput :nth-child(3):hover {
+  transform: scale(1.05);
+  background-color: red;
+}
+
+.remove-project {
+  background-color: transparent;
+  color: transparent;
+  border-style: none;
+  width: 10px;
+  padding: 0 15px 0 0;
+  font-size: 18px;
+}
+
+.remove-project:hover {
+  color: black;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.main h2 {
+  text-align: left;
+  font-size: 36px;
+  margin: 0;
+  padding: 20px 40px;
+}
+
+.taskbar {
+  padding: 0 40px 20px 40px;
+}
+
+.bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.bar-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.addTaskBtn {
+  background-color: #dddddd;
+  border-style: none;
+  border-radius: 10px;
+  margin: 0 40px;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: left;
+  padding: 5px;
+}
+
+.addTaskBtn:hover {
+  background-color: #cccccc;
+}
+
+.addTask {
+  margin: 0 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.addTask [type="button"] {
+  font-size: 18px;
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  width: 22%;
+  text-align: center;
+  padding: 5px;
+}
+
+.addTask :nth-child(1),
+.addTask :nth-child(2) {
+  font-size: 18px;
+  border-style: none;
+  background-color: white;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px;
+}
+
+.addTask :nth-child(1) {
+  width: 100%;
+}
+
+.addTask :nth-child(2) {
+  width: 50%;
+}
+
+.addTask :nth-child(3) {
+  background-color: rgb(26, 219, 26);
+}
+
+.addTask :nth-child(4) {
+  background-color: red;
+}
+
+.addTask :nth-child(3):hover,
+.addTask :nth-child(4):hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  color: #eeeeee;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  background: #777777;
+  width: 100vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .sidebar {
+    padding: 10px;
+    width: 100px;
+  }
+
+  .sidebar [type="button"] {
+    font-size: 12px;
+    margin: 5px 0;
+    width: 100px;
+    border-radius: 10px;
+  }
+
+  .projects div {
+    font-size: 12px;
+    margin: 5px 0;
+    width: 90px;
+    border-radius: 10px;
+  }
+
+  .project {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  .project input {
+    background-color: red;
+    margin-bottom: 0 !important;
+    width: 90px !important;
+    color: black;
+    margin: 10px 0 0 0 !important;
+    padding: 0;
+  }
+
+  .projectInput {
+    margin-left: 5px !important;
+  }
+
+  #projectName {
+    font-size: 12px;
+    width: 80px;
+    padding: 5px;
+    margin: 5px 0;
+  }
+
+  .sidebar h2 {
+    font-size: 16px;
+  }
+
+  .main h2 {
+    font-size: 20px;
+    padding: 20px 20px 10px 20px;
+  }
+
+  .taskbar {
+    padding: 0 20px 10px 20px;
+  }
+
+  .taskbar p {
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .taskbar input {
+    height: 12px;
+    width: 12px;
+  }
+
+  .bar-left {
+    gap: 5px;
+  }
+
+  .addTaskBtn {
+    font-size: 12px;
+    margin: 0 20px;
+    padding: 0;
+  }
+
+  .addTask {
+    margin: 10px 20px;
+  }
+
+  .addTask [type="button"] {
+    font-size: 12px;
+    border-radius: 10px;
+    width: 46%;
+  }
+
+  .addTask [type="input"],
+  .addTask [type="date"] {
+    font-size: 12px;
+    padding: 3px;
+    width: 100%;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+}

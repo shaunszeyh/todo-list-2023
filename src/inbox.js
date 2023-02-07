@@ -3,15 +3,24 @@ import { format } from "date-fns";
 
 function createInbox(project) {
   const inbox = document.createElement("div");
+  const titlebar = document.createElement("div");
   const title = document.createElement("h2");
+  const search = document.createElement("input");
   const taskbar = document.createElement("div");
   const className = project.replace(/\s+/g, "").toLowerCase();
 
+  titlebar.classList.add("titlebar")
+  search.classList.add("searchForTask");
+  search.type = "search";
+  search.setAttribute("placeholder", "Search for task...");
+  search.addEventListener("input", searchForTask, false);
   taskbar.classList.add("taskbar");
   title.textContent = project;
   inbox.classList.add(className, "main");
 
-  inbox.appendChild(title);
+  titlebar.appendChild(title);
+  titlebar.appendChild(search);
+  inbox.appendChild(titlebar);
   inbox.appendChild(taskbar);
   inbox.appendChild(createTaskBtn(project));
 
@@ -60,7 +69,11 @@ function addTask(project) {
   add.addEventListener(
     "click",
     function () {
-      getTask(project);
+      try {
+        getTask(project);
+      } catch(err) {
+        alert("Please enter a valid date!");
+      }
     },
     false
   );
@@ -112,6 +125,17 @@ function loadInbox(project) {
   } else body.appendChild(createInbox(project));
 
   loopTasks(tasks, project);
+}
+
+function searchForTask() {
+  const taskbar = document.querySelector(".taskbar");
+  const search = document.querySelector(".searchForTask");
+  let taskNodeList = taskbar.childNodes;
+  [...taskNodeList].forEach(element => {
+    element.style.display = "flex";
+  });
+  let taskArray = [...taskNodeList].filter(task => !(task.querySelector(".bar-left p").textContent.toLowerCase()+task.querySelector(".bar-right p").textContent.toLowerCase()).includes(search.value));
+  taskArray.forEach(task => task.style.display = "none");
 }
 
 export default loadInbox;

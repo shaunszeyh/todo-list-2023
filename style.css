@@ -130,6 +130,11 @@ body {
   padding: 20px 40px;
 }
 
+.titlebar {
+    display: flex;
+    flex-direction: row;
+}
+
 .taskbar {
   padding: 0 40px 20px 40px;
 }

@@ -4,7 +4,7 @@
 
 - Website created using webpack so that modules like date-fns and dayjs can be used
 - LocalStorage API was used so tasks and projects can be viewed even after closing and reopening the website
-- Mobile-responsive css
+- Mobile-responsive CSS
 
 ## Where to find source code?
 - HTML is found in `dist/index.html`

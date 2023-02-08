@@ -128,12 +128,13 @@ function removeProjectBtn() {
 }
 
 function removeProject(e) {
+  e.stopPropagation();
   const projects = document.getElementsByClassName("projects")[0];
   const projectToRemoveID = e.target.classList[1];
   const projectToRemove = document.getElementsByClassName(projectToRemoveID)[0];
-  console.log(projectToRemove);
 
   projects.removeChild(projectToRemove);
+  if (projectToRemoveID == document.querySelector(".main").classList[0]) loadInbox("Inbox");
 
   for (let i = 0; i < projectsList.length; i++) {
     const projectItem = projectsList[i].replace(/\s+/g, "").toLowerCase();
@@ -143,6 +144,6 @@ function removeProject(e) {
       break;
     }
   }
-}
+} 
 
 export { createProjectBtn, loadProjects };

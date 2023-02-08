@@ -111,8 +111,6 @@ function getTask(project) {
 function cancelTask(project) {
   const inbox = document.getElementsByClassName("main")[0];
   const container = document.querySelector(".addTask");
-  console.log(container);
-
   inbox.replaceChild(createTaskBtn(project), container);
 }
 
